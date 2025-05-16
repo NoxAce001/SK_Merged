@@ -29,7 +29,7 @@ const EducationSection = () => {
   useEffect(() => {
     const fetchStudentsImages = async() => {
         try {
-          const response = await axios.get("http://localhost:8000/homeimage/recentStudentImg")
+          const response = await axios.get("http://localhost:8000/api/v1/eduSection/recentStudentImg")
 
           console.log("studentsimage" , response.data.data);
           const studentsdataarray = response.data.data;
@@ -46,7 +46,7 @@ const EducationSection = () => {
   useEffect(() => {
     const fetchCenterImages = async() => {
         try {
-          const response = await axios.get("http://localhost:8000/homeimage/recentCenterImg")
+          const response = await axios.get("http://localhost:8000/api/v1/eduSection/recentCenterImg")
 
           console.log("centerImages" , response.data.data);
           const centerImgArray = response.data.data;

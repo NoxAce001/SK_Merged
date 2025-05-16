@@ -18,7 +18,7 @@ const OurAchievers = () => {
       try {
         setLoading(true);
         // Replace with your actual API endpoint
-        const response = await axios.get('http://localhost:8000/api/v1/mainSliderImages/');
+        const response = await axios.get('http://localhost:8000/api/v1/eventBoxImages/published');
         
         // Axios automatically throws errors for non-2xx responses
         // and puts the response data in response.data

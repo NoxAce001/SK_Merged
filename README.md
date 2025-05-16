@@ -1,0 +1,1 @@
+Includes all parts - Admin , Center , Student and Homepage

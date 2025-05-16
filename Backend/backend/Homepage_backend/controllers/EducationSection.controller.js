@@ -1,23 +1,20 @@
-// controllers/studentController.js
-const Student = require("../models/Student")
+import Student from "../../Admin_Backend/models/Student/Student_Details.model.js";
 
-exports.getRecentStudents = async (req, res) => {
+export const getRecentStudents = async (req, res) => {
   try {
-    // Fetch recently joined students (sorted by creation date)
-    // Limit to 10 students for the scrolling display
     const students = await Student.find()
       .select('studentName studentPhoto')
       .sort({ createdAt: -1 })
       .limit(10);
-    
-      console.log("come from database"  , students)
-    // Transform the data to match the frontend requirements
+
+    console.log("come from database:", students);
+
     const formattedStudents = students.map(student => ({
       name: student.studentName,
       image: student.studentPhoto
     }));
 
-    console.log("formated data :: " , formattedStudents)
+    console.log("formatted data:", formattedStudents);
 
     return res.status(200).json({
       success: true,
@@ -34,36 +31,32 @@ exports.getRecentStudents = async (req, res) => {
   }
 };
 
-
-
-exports.getRecentCenterImgs = async (req, res) => {
+export const getRecentCenterImgs = async (req, res) => {
   try {
-    // Fetch recently joined students (sorted by creation date)
-    // Limit to 10 students for the scrolling display
     const Centers = await Student.find()
       .select('studentName studentPhoto')
       .sort({ createdAt: -1 })
       .limit(10);
-    
-      console.log("come from database"  , Centers)
-    // Transform the data to match the frontend requirements
+
+    console.log("come from database:", Centers);
+
     const formattedCenters = Centers.map(student => ({
       name: student.studentName,
       image: student.studentPhoto
     }));
 
-    console.log("formated data :: " , formattedCenters)
+    console.log("formatted data:", formattedCenters);
 
     return res.status(200).json({
       success: true,
-      message: "Recent students fetched successfully",
+      message: "Recent center images fetched successfully",
       data: formattedCenters
     });
   } catch (error) {
-    console.error("Error fetching recent students:", error);
+    console.error("Error fetching recent center images:", error);
     return res.status(500).json({
       success: false,
-      message: "Failed to fetch recent students",
+      message: "Failed to fetch recent center images",
       error: error.message
     });
   }
