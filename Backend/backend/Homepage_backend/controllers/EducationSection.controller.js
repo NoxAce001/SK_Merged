@@ -7,14 +7,11 @@ export const getRecentStudents = async (req, res) => {
       .sort({ createdAt: -1 })
       .limit(10);
 
-    console.log("come from database:", students);
-
     const formattedStudents = students.map(student => ({
       name: student.studentName,
       image: student.studentPhoto
     }));
 
-    console.log("formatted data:", formattedStudents);
 
     return res.status(200).json({
       success: true,
@@ -38,14 +35,11 @@ export const getRecentCenterImgs = async (req, res) => {
       .sort({ createdAt: -1 })
       .limit(10);
 
-    console.log("come from database:", Centers);
-
     const formattedCenters = Centers.map(student => ({
       name: student.studentName,
       image: student.studentPhoto
     }));
 
-    console.log("formatted data:", formattedCenters);
 
     return res.status(200).json({
       success: true,

@@ -128,7 +128,7 @@ const GalleryHomepage = () => {
         Sk Edutech Gallery
         
       </h1>
-      <h2 className="text-md font-bold text-center text-gray-400 mb-8">Our Events Photos & Videos</h2>
+      <h2 className="text-md font-bold text-center text-gray-400 mb-8">Our Event's Photos & Videos</h2>
       {/* Search Bar */}
       <div className="mb-6">
         <input

@@ -5,6 +5,7 @@ import HomePage from './frontend/Render_Pages/Homepage'
 import AdminPanel from './frontend/Render_Pages/AdminPanel';
 import StudentPanel from './frontend/Render_Pages/StudentPanel'
 import GalleryHomepage from './frontend/Homepage_frontend/components/gallery/Gallery';
+import NAllReviewsPage from './frontend/Homepage_frontend/components/ReviewsSection/NewAllReviews';
 import StudentAchievementsPanel from './frontend/AdminPanel_frontend/OurAchievers/Achievers';
 import MainSliderUploadPage from './frontend/AdminPanel_frontend/MainSlider/MainSliderImgUpload';
 import AdminGalleryPanel from './frontend/AdminPanel_frontend/GalleryPanel/AdminGalleryPanel';
@@ -30,6 +31,7 @@ function App() {
         {/* Homepage Routes */}
         <Route path="/" element={<HomePage/>} />
         <Route path="/gallery" element={<GalleryHomepage/>} />
+<Route path="/allreviews" element={<NAllReviewsPage/>} />
 
 
         {/* Admin Routes */}

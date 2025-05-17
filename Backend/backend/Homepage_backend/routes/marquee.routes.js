@@ -1,5 +1,5 @@
 import express from 'express';
-import Marquee from '../../Homepage_backend/models/MarqueeLine/marquee.model.js';
+import Marquee from '../../Admin_Backend/models/MarqueeLine/marquee.model.js';
 
 const router = express.Router();
 
