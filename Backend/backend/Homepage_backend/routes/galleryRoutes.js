@@ -1,6 +1,6 @@
 
 import express from 'express';
-import GalleryItem from '../models/Gallery/GalleryItem.js';
+import GalleryItem from '../../Admin_Backend/models/Gallery/GalleryItem.js';
 
 const router = express.Router();
 

@@ -10,6 +10,11 @@ import AdminGalleryPanel from "../AdminPanel_frontend/GalleryPanel/AdminGalleryP
 import EventBox from "../AdminPanel_frontend/OurAchievers/EventBox";
 import MarqueeManager from "../AdminPanel_frontend/MarqueeLine/Marquee";
 import Dashboard from "../AdminPanel_frontend/Dashboard/Dashboard";
+import FranchiseListPage from "../AdminPanel_frontend/fracnhise/pages/FranchiseListPage";
+import AddFranchisePage from "../AdminPanel_frontend/fracnhise/pages/AddFranchisePage";
+import RequestStackPage from "../AdminPanel_frontend/fracnhise/pages/RequestStackPage";
+import EditFranchisePage from "../AdminPanel_frontend/fracnhise/pages/EditFranchisePage";
+
 
 const AdminPanel = () => {
   return (
@@ -19,23 +24,28 @@ const AdminPanel = () => {
         {/* Main Content */}
         <div className="flex flex-1">
 
-          <Sidebar/>
- 
+          <Sidebar />
+
           {/* Content Area */}
           <div className="flex-1 bg-gray-100 p-6 overflow-y-auto">
             <Routes>
-              <Route path="dashboard" element={<Dashboard/>} /> 
-              <Route path="achievers" element={<StudentAchievementsPanel/>} />
-              <Route path="mainslider" element={<MainSliderUploadPage/>} /> 
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="achievers" element={<StudentAchievementsPanel />} />
+              <Route path="mainslider" element={<MainSliderUploadPage />} />
 
-              <Route path="gallery" element={<AdminGalleryPanel/>} />
-           
-              <Route path="marqueeline" element={<MarqueeManager />} />              
+              <Route path="gallery" element={<AdminGalleryPanel />} />
 
-              <Route path="MM" element={<MarqueeManager/>} />
-              <Route path="EventBox" element={<EventBox/>} />
+              <Route path="marqueeline" element={<MarqueeManager />} />
 
-            
+              <Route path="MM" element={<MarqueeManager />} />
+              <Route path="EventBox" element={<EventBox />} />
+              {/* <Route path="student_list" element={<studen />} /> */}
+
+              <Route path="franchises" element={<FranchiseListPage />} /> {/* Lists ACTIVE & VERIFIED franchises */}
+              <Route path="franchises/add" element={<AddFranchisePage />} /> {/* Admin adds a NEW franchise (starts Pending) */}
+              <Route path="franchises/requests" element={<RequestStackPage />} /> {/* Shows franchises needing action */}
+              <Route path="franchises/edit/:franchiseId" element={<EditFranchisePage />} /> {/* Edit a specific franchise */}
+
             </Routes>
           </div>
         </div>

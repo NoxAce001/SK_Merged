@@ -12,7 +12,7 @@ import { useState} from "react";
 const LoginBoxes = () => {
   const navigate = useNavigate();
   const ApplyFranchise = () => {
-    navigate("/Apply for Franchise");
+    navigate("/ApplyforFranchise");
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +20,9 @@ const LoginBoxes = () => {
     const [verificationResult, setVerificationResult] = useState(null);
     const [loading, setLoading] = useState(false);
   
+     const studentLogin = () => {
+    navigate("/student/login"); // or whatever your login route is
+  };
     // Mock function to simulate API call
     const verifyCertificate = async () => {
       setLoading(true);
@@ -47,9 +50,9 @@ const LoginBoxes = () => {
     // Parent div - Responsive grid layout
     <div className="grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-5 gap-6 p-4 mx-4 md:mx-12 mb-10">
       {/* Student Login */}
-      <div className="group border-2 border-[#003366] rounded-3xl font-bold text-regal-blue px-6 py-8 flex items-center justify-center flex-col lg:flex-row gap-4 transition duration-500 hover:bg-sky-950 cursor-pointer">
+      <div onClick={studentLogin} className="group border-2 border-[#003366] rounded-3xl font-bold text-regal-blue px-6 py-8 flex items-center justify-center flex-col lg:flex-row gap-4 transition duration-500 hover:bg-sky-950 cursor-pointer">
         <FaGraduationCap className="text-[#003366] group-hover:text-white transition duration-300" size={50} />
-        <div className="text-xl group-hover:text-white transition duration-300 text-center lg:text-left mt-2">
+        <div  className="text-xl group-hover:text-white transition duration-300 text-center lg:text-left mt-2">
           Student <br /> Login
         </div>
       </div>

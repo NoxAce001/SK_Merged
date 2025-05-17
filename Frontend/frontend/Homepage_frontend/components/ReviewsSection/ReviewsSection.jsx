@@ -36,7 +36,7 @@ const ReviewsSection = () => {
   };
 
   const handleViewAll = () => {
-    navigate("newa"); // Adjust this for the correct navigation
+    navigate("allreviews"); // Adjust this for the correct navigation
   };
 
   // Get current visible reviews (3 at a time)

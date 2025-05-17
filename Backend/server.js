@@ -6,12 +6,14 @@ import dotenv from 'dotenv';
 
 
 // Homepage Routes
-import galleryRoutes from './backend/Homepage_backend/routes/galleryRoutes.js' 
+// import galleryRoutes from './backend/Homepage_backend/routes/galleryRoutes.js' 
 import mainSliderRoutes from './backend/Homepage_backend/routes/mainSliderRoute.js'
 import marqueeRoutes from './backend/Homepage_backend/routes/marquee.routes.js'
 import FeedbackRoutes from './backend/Homepage_backend/routes/feedbackRoutes.js'
 import AchieverSliderRoutes from './backend/Homepage_backend/routes/achieverSliderRoutes.js'
 import eduSectionRouter from './backend/Homepage_backend/routes/EduSectionImageRoutes.js'
+import marqueeLineRouter from './backend/Admin_Backend/routes/MarqueeLine/marquee.routes.js'
+
 
 
 
@@ -19,6 +21,9 @@ import eduSectionRouter from './backend/Homepage_backend/routes/EduSectionImageR
 import mainSliderRouter from './backend/Admin_Backend/routes/MainSlider/mainSlider.routes.js'
 import achieversRouter from './backend/Admin_Backend/routes/Achievers/achievementRoutes.js'
 import eventBoxRouter from './backend/Admin_Backend/routes/Achievers/eventBox.routes.js'
+import franchiseRouter from "./backend/Admin_Backend/routes/franchise/franchise.routes.js"; // Import franchise router
+import galleryRouter from "./backend/Admin_Backend/routes/Gallery/galleryRoutes.js"; // Import franchise router
+
 
 
 //Student Routes
@@ -39,23 +44,27 @@ app.use(cors({
 }));
 
 // Homepage Routes
-app.use("/api/v1/gallery", galleryRoutes)
+// app.use("/api/v1/gallery", galleryRoutes)
 app.use("/api/v1/mainSliderImages", mainSliderRoutes)
 app.use("/api/v1/marquee", marqueeRoutes)
 app.use("/api/v1", FeedbackRoutes);
 app.use("/api/v1/achievements",AchieverSliderRoutes );
 app.use("/api/v1/eduSection",eduSectionRouter );
+app.use("/api/v1/marquee",marqueeLineRouter );
+
 
 
 
 // admin routes
 app.use("/api/v1/mainSliderImages",mainSliderRouter)
 app.use("/api/v1/marquee",marqueeRoutes)
-app.use("/api/v1/gallery", galleryRoutes)
+// app.use("/api/v1/gallery", galleryRoutes)
 app.use("/api/v1/achievers", achieversRouter)
 app.use("/api/v1/eventBoxImages",eventBoxRouter)
 // app.use("/api/v1/payment" , paymentRouter)
 // app.use("/api/v1/adminwallet" , adminRouter)
+app.use("/api/v1/franchises", franchiseRouter); 
+app.use("/api/v1/gallery", galleryRouter);
 
 
 // Student Routes 
